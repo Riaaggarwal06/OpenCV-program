@@ -1,0 +1,36 @@
+import cv2 as cv
+def get_data(nos):    
+    capture=cv.VideoCapture(0)
+    c=100
+    flag=False
+    while True:
+        isTrue,frame=capture.read()
+        if not isTrue:
+            break
+        if c==nos:
+            c=0
+            break
+        if flag:
+            roi=frame[10:50,60:10]
+            eval(cl_name)=append([roi,cl_name])
+            c+=1
+        k=cv.waitKey(1)
+
+        if k==1:
+            flag=not flag
+            cl_name='Rock'
+            r=[]
+        if k==2:
+            flag=not flag
+            cl_name='Paper'
+            p=[]
+        if k==3:
+            flag=not flag
+            cl_name='Scissors'
+            s=[]
+        if k==4:
+            flag=not flag
+            cl_name='Thumb'
+            th=[]
+    cap.realease()
+    cv.destroyAllWindows()
